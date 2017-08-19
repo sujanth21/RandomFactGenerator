@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Heavy</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomFactGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +27,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Rj5-fn-Fcn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFF-9x-eea">
+                                <rect key="frame" x="16" y="433.5" width="343" height="213.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EFF-9x-eea" secondAttribute="height" multiplier="307:191" id="PsR-0H-N6V"/>
+                                </constraints>
+                                <state key="normal" image="Brain"/>
+                                <connections>
+                                    <action selector="factGeneratorBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dla-sh-HeS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun Fact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-Xt-ynk">
+                                <rect key="frame" x="16" y="28" width="343" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T2L-Xt-ynk" secondAttribute="height" multiplier="343:79" id="bzG-MN-BVM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the brain.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-ze-ptq">
+                                <rect key="frame" x="16" y="147" width="343" height="263"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T2L-Xt-ynk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Rf-Pe-rK0"/>
+                            <constraint firstItem="T2L-Xt-ynk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6FL-Lp-qIB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EFF-9x-eea" secondAttribute="trailing" id="6Hw-jd-SGR"/>
+                            <constraint firstItem="ljn-ze-ptq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PVZ-nq-tDW"/>
+                            <constraint firstAttribute="bottom" secondItem="EFF-9x-eea" secondAttribute="bottom" constant="20" id="QwL-br-Uw8"/>
+                            <constraint firstItem="Rj5-fn-Fcn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RH9-5P-ziQ"/>
+                            <constraint firstItem="ljn-ze-ptq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Tv9-72-4k1"/>
+                            <constraint firstItem="Rj5-fn-Fcn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VES-IC-cCc"/>
+                            <constraint firstAttribute="bottom" secondItem="Rj5-fn-Fcn" secondAttribute="bottom" id="cXd-OP-JWJ"/>
+                            <constraint firstItem="EFF-9x-eea" firstAttribute="top" secondItem="ljn-ze-ptq" secondAttribute="bottom" constant="23.5" id="iYc-GC-URw"/>
+                            <constraint firstItem="ljn-ze-ptq" firstAttribute="top" secondItem="T2L-Xt-ynk" secondAttribute="bottom" constant="40" id="mSz-Me-8jl"/>
+                            <constraint firstAttribute="trailing" secondItem="Rj5-fn-Fcn" secondAttribute="trailing" id="rmu-Ee-zLj"/>
+                            <constraint firstItem="EFF-9x-eea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="s3Y-ka-t1n"/>
+                            <constraint firstItem="T2L-Xt-ynk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="yU6-Cn-wNc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="factLabel" destination="ljn-ze-ptq" id="u28-wV-67y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Brain" width="460" height="340"/>
+        <image name="background" width="1920" height="1080"/>
+    </resources>
 </document>
