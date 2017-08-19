@@ -20,8 +20,27 @@ class ViewController: UIViewController {
                         """
                            You burn more calories sleeping than
                            you do watching television
+                        """,
+                        """
+                           There are more lifeforms living on your skin than there are people on the planet.
+                        """,
+                        """
+                           A single cloud can weight more than 1 million pounds.
+                        """,
+                        """
+                           The average person walks the equivalent of three times around the world in a lifetime.
+                        """,
+                        """
+                           The world’s oldest piece of chewing gum is over 9,000 years old!
+                        """,
+                        """
+                           Earth has traveled more than 5,000 miles in the past 5 minutes.
+                        """,
+                        """
+                           Banging your head against a wall burns 150 calories an hour.
                         """
     ]
+    
     
     
     override func viewDidLoad() {
